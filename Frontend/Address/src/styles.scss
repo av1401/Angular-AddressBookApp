@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Scroll ko remove karne ke liye */
+  }
+  .heading{
+    text-align: center;
+    font-size: 40px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 
+    0px 0px 5px #FFA500, 
+    0px 0px 10px #FFD700, 
+    0px 0px 20px #FF8C00; 
+  letter-spacing: 2px;
+  padding: 40px;
+  }
+  .Information_Table{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  table{
+
+    border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 20px;
+  }
+  th, td {
+    color:#FFA500;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #FFD700; /* Golden border */
+    box-shadow: 0 0 10px #FFD700;
+
+  }
+  .button{
+    background-color: #fff4b8;
+    color: #ff3700;
+    padding:10px;
+    border: #ff9500;
+    margin: 2px;
+    border-radius: 15%;
+    
+  }
+  .button :hover{
+    color: #fff4b8;
+    background-color: #ff3700;
+    padding:10px;
+    border: #ff9500;
+    margin: 2px;
+    border-radius: 15%;
+    cursor: pointer;
+    
+  }
+  .deleteedit{
+    margin: 10px;
+  }
+  .AddButtonContainer {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    margin: 20px;  /* Space below button */
+  }
+  
+  .AddButton {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #FFD700; /* Golden */
+    border: 2px solid #FFD700;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+  }
+  
+  .AddButton:hover {
+    background: black;
+    color: #FFD700;
+  }.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8); /* Black transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #FFD700;
+    max-width: 600px; /* Form width set */
+    margin: 0 auto; /* Center align */
+    color: #ff9500;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    color: #FFA500; /* Golden text */
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: flex-start; /* Align label to left */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid #FFD700;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}

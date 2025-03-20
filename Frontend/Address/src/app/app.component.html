@@ -1,0 +1,79 @@
+<div class="Everything"
+     [style.background-image]="'url(assets/webwall.jpg)'"
+     [style.background-size]="'cover'"
+     [style.background-position]="'center'"
+     [style.background-repeat]="'no-repeat'"
+     [style.width]="'100vw'"
+     [style.min-height]="'100vh'">
+<h1>Address Book</h1>
+
+  <h1 class="heading">Address Book</h1>
+
+  <div class="Information_Table">
+    <table >
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>City</th>
+          <th>Phone Number</th>
+          <th>Setting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of list">
+          <td>{{ item.id }}</td>
+          <td>{{ item.fullName }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.state }}</td>
+          <td>{{ item.zip }}</td>
+          <td>{{ item.city }}</td>
+          <td>{{ item.number }}</td>
+          <td class="deleteedit">
+            <button class="button" (click)="deleteMember(item.id)">Delete</button>
+            
+           
+            <button class="button" (click)="editMember(item)">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  
+  <div *ngIf="showForm" class="form-container">
+    <h2 class="heading">{{ isEdit ? 'Edit Member' : 'Add New Member' }}</h2>
+    
+    <form (ngSubmit)="isEdit ? updateMember() : addMember()">
+      <label>Full Name:</label>
+      <input type="text" [(ngModel)]="newMember.fullName" name="fullName" required />
+
+      <label>Address:</label>
+      <input type="text" [(ngModel)]="newMember.address" name="address" required />
+
+      <label>State:</label>
+      <input type="text" [(ngModel)]="newMember.state" name="state" required />
+
+      <label>Zip:</label>
+      <input type="number" [(ngModel)]="newMember.zip" name="zip" required />
+
+      <label>City:</label>
+      <input type="text" [(ngModel)]="newMember.city" name="city" required />
+
+      <label>Phone Number:</label>
+      <input type="number" [(ngModel)]="newMember.number" name="number" required />
+
+      <button class="button" type="submit">{{ isEdit ? 'Update' : 'Save' }}</button>  
+      <button class="button" type="button" (click)="showForm = false">Cancel</button>
+    </form>
+  </div><div class="AddButtonContainer">
+    <button class="AddButton" (click)="showForm = true; isEdit = false;">Add New Member</button>
+  </div>
+  
+  
+</div>
+
+<router-outlet></router-outlet>
